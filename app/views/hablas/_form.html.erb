@@ -75,6 +75,7 @@ function capitalize(s) {
 }
 
 function startDictation(event) {
+  document.getElementById('final_transcript');
   if (recognizing) {
     recognition.stop();
     return;
