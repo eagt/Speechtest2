@@ -12,7 +12,7 @@
   <% end %>
 
   <div class="field">
-    <%= f.label :dictate %>
+    <%= f.label :dictation %>
     <%= f.text_area :dictate, :id => "final_transcript" %> 
 
     <div>
@@ -27,7 +27,7 @@
 <script type="text/javascript">
 var final_transcript = '';
 var recognizing = false;
-
+var r =  document.getElementById('final_transcript');
 if ('webkitSpeechRecognition' in window) {
 
   var recognition = new webkitSpeechRecognition();
@@ -60,6 +60,7 @@ if ('webkitSpeechRecognition' in window) {
     final_span.innerHTML = linebreak(final_transcript);
     interim_span.innerHTML = linebreak(interim_transcript);
     
+    r.innerHTML = linebreak(final_transcript);
   };
 }
 
